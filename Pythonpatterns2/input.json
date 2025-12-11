@@ -1,0 +1,31 @@
+[
+  {
+    "op": "create_port",
+    "id": 0,
+    "lat": 100.0,
+    "lon": 200.0
+  },
+  {
+    "op": "create_port",
+    "id": 1,
+    "lat": 120.0,
+    "lon": 210.0
+  },
+  {
+    "op": "create_container",
+    "weight": 2500,
+    "type": null,
+    "port_id": 0
+  },
+  {
+    "op": "create_ship",
+    "id": 0,
+    "port_id": 0,
+    "max_weight": 20000,
+    "max_all": 10,
+    "max_heavy": 5,
+    "max_ref": 3,
+    "max_liq": 3,
+    "fuel_per_km": 1.0
+  }
+]

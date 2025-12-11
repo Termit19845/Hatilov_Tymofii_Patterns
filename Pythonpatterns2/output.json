@@ -1,0 +1,27 @@
+{
+  "Port 0": {
+    "lat": 100.0,
+    "lon": 200.0,
+    "basic_container": [
+      1
+    ],
+    "heavy_container": [],
+    "refrigerated_container": [],
+    "liquid_container": [],
+    "ship_0": {
+      "fuel_left": 0.0,
+      "basic_container": [],
+      "heavy_container": [],
+      "refrigerated_container": [],
+      "liquid_container": []
+    }
+  },
+  "Port 1": {
+    "lat": 120.0,
+    "lon": 210.0,
+    "basic_container": [],
+    "heavy_container": [],
+    "refrigerated_container": [],
+    "liquid_container": []
+  }
+}
