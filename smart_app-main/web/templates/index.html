@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SmartApp IoT Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>🏠 SmartApp IoT Dashboard</h1>
+    </header>
+
+    <main>
+        <section class="devices">
+            {% if devices %}
+                {% for device in devices %}
+                <div class="device-card">
+                    <h2>{{ device.type | replace('_', ' ') | title }}</h2>
+                    <p><strong>ID:</strong> {{ device.device_id }}</p>
+                    <p><strong>Connection:</strong> {{ device.connection }}</p>
+
+                    {% if device.type == "smart_speaker" %}
+                        <p>Status: {{ "ON" if device.is_on else "OFF" }}</p>
+                        <form action="/toggle_speaker" method="post">
+                            <button type="submit" class="btn">
+                                {{ "Turn Off" if device.is_on else "Turn On" }}
+                            </button>
+                        </form>
+                        <p>Volume: {{ device.volume }}%</p>
+
+                    {% elif device.type == "smart_light" %}
+                        <p>Status: {{ "ON" if device.is_on else "OFF" }}</p>
+                        <form action="/toggle_light" method="post">
+                            <button type="submit" class="btn">
+                                {{ "Turn Off" if device.is_on else "Turn On" }}
+                            </button>
+                        </form>
+                        <p>Brightness: {{ device.brightness }}%</p>
+
+                    {% elif device.type == "smart_curtains" %}
+                        <p>Status: {{ "OPEN" if device.is_open else "CLOSED" }}</p>
+                        <form action="/toggle_curtains" method="post">
+                            <button type="submit" class="btn">
+                                {{ "Close" if device.is_open else "Open" }}
+                            </button>
+                        </form>
+                        <p>Position: {{ device.position }}%</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No devices found.</p>
+            {% endif %}
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 SmartApp IoT — Microservices Demo</p>
+    </footer>
+</body>
+</html>

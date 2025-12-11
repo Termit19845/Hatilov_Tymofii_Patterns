@@ -1,0 +1,24 @@
+# FastAPI framework for building APIs and the web app
+fastapi
+
+# ASGI server to run FastAPI apps
+uvicorn
+
+# Templating engine for HTML dashboard
+jinja2
+
+# Required for handling HTML forms in FastAPI
+python-multipart
+
+# HTTP client used by controller to communicate with devices
+requests
+
+# Data validation and schema management
+pydantic
+
+fastapi
+uvicorn
+httpx
+jinja2
+python-multipart
+pydantic
